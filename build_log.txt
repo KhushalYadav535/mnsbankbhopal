@@ -1,0 +1,194 @@
+﻿Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+node.exe : Error: 
+Cannot apply unknown 
+utility class `shadow-
+[0_8px_32px_rgba(0,`
+At C:\Program Files\no
+dejs\npx.ps1:29 char:3
++   & $NODE_EXE 
+$NPX_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Error: Can   
+ not a...x_32px_rg    
+ba(0,`:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+    [2m[at 
+onInvalidCandidate (C:
+\Users\khush\OneDrive\
+Desktop\mnsbank\mnsfro
+ntend\mnsbankbhopal\no
+de_modules\tailwindcss
+\dist\lib.js:21:1511)]
+[0m
+    [2m[at Ee (C:\Use
+rs\khush\OneDrive\Desk
+top\mnsbank\mnsfronten
+d\mnsbankbhopal\node_m
+odules\tailwindcss\dis
+t\lib.js:16:36740)][0
+m
+    [2m[at C:\Users\k
+hush\OneDrive\Desktop\
+mnsbank\mnsfrontend\mn
+sbankbhopal\node_modul
+es\tailwindcss\dist\li
+b.js:21:355][0m
+    [2m[at Pr (C:\Use
+rs\khush\OneDrive\Desk
+top\mnsbank\mnsfronten
+d\mnsbankbhopal\node_m
+odules\tailwindcss\dis
+t\lib.js:3:1733)][0m
+    [2m[at _ (C:\User
+s\khush\OneDrive\Deskt
+op\mnsbank\mnsfrontend
+\mnsbankbhopal\node_mo
+dules\tailwindcss\dist
+\lib.js:3:1377)][0m
+    [2m[at Te (C:\Use
+rs\khush\OneDrive\Desk
+top\mnsbank\mnsfronten
+d\mnsbankbhopal\node_m
+odules\tailwindcss\dis
+t\lib.js:21:172)][0m
+    [2m[at pn (C:\Use
+rs\khush\OneDrive\Desk
+top\mnsbank\mnsfronten
+d\mnsbankbhopal\node_m
+odules\tailwindcss\dis
+t\lib.js:38:294)][0m
+    [2m[at async dn (
+C:\Users\khush\OneDriv
+e\Desktop\mnsbank\mnsf
+rontend\mnsbankbhopal\
+node_modules\tailwindc
+ss\dist\lib.js:38:631)
+][0m
+    [2m[at async Xr (
+C:\Users\khush\OneDriv
+e\Desktop\mnsbank\mnsf
+rontend\mnsbankbhopal\
+node_modules\@tailwind
+css\node\dist\index.js
+:10:3417)][0m
+    [2m[at async N (C
+:\Users\khush\OneDrive
+\Desktop\mnsbank\mnsfr
+ontend\mnsbankbhopal\n
+ode_modules\@tailwindc
+ss\postcss\dist\index.
+js:10:3979)][0m
+
+> Build error occurred
+Error: Turbopack 
+build failed with 1 
+errors:
+./app/globals.css
+Error evaluating 
+Node.js code
+CssSyntaxError: 
+tailwindcss: C:\Users\
+khush\OneDrive\Desktop
+\mnsbank\mnsfrontend\m
+nsbankbhopal\app\globa
+ls.css:1:1: Cannot 
+apply unknown utility 
+class `shadow-[0_8px_3
+2px_rgba(0,`
+    at Input.error (no
+de_modules/postcss/lib
+/input.js:135:16) [C:\
+Users\khush\OneDrive\D
+esktop\mnsbank\mnsfron
+tend\mnsbankbhopal\.ne
+xt\build\chunks\node_m
+odules_fe693df6._.js:4
+651:22]
+    at Root.error (nod
+e_modules/postcss/lib/
+node.js:146:32) [C:\Us
+ers\khush\OneDrive\Des
+ktop\mnsbank\mnsfronte
+nd\mnsbankbhopal\.next
+\build\chunks\node_mod
+ules_fe693df6._.js:928
+:38]
+    [at Object.Once (C
+:\Users\khush\OneDrive
+\Desktop\mnsbank\mnsfr
+ontend\mnsbankbhopal\n
+ode_modules\@tailwindc
+ss\postcss\dist\index.
+js:10:6913)]
+    at async 
+LazyResult.runAsync (n
+ode_modules/postcss/li
+b/lazy-result.js:293:1
+1) [C:\Users\khush\One
+Drive\Desktop\mnsbank\
+mnsfrontend\mnsbankbho
+pal\.next\build\chunks
+\node_modules_fe693df6
+._.js:6214:21]
+    at async 
+transform (turbopack:/
+//[turbopack-node]/tra
+nsforms/postcss.ts:70:
+34) [C:\Users\khush\On
+eDrive\Desktop\mnsbank
+\mnsfrontend\mnsbankbh
+opal\.next\build\chunk
+s\[root-of-the-server]
+__51225daf._.js:146:36
+]
+    at async run (turb
+opack:///[turbopack-no
+de]/ipc/evaluate.ts:92
+:23) [C:\Users\khush\O
+neDrive\Desktop\mnsban
+k\mnsfrontend\mnsbankb
+hopal\.next\build\chun
+ks\[root-of-the-server
+]__974941ed._.js:443:3
+1]
+
+Import trace:
+  Client Component 
+Browser:
+    ./app/globals.css 
+[Client Component 
+Browser]
+    ./app/layout.tsx 
+[Server Component]
+
+
+    at async 
+transform (turbopack:/
+//[turbopack-node]/tra
+nsforms/postcss.ts:70:
+34) [C:\Users\khush\On
+eDrive\Desktop\mnsbank
+\mnsfrontend\mnsbankbh
+opal\.next\build\chunk
+s\[root-of-the-server]
+__51225daf._.js:146:36
+])
+    at async run (turb
+opack:///[turbopack-no
+de]/ipc/evaluate.ts:92
+:23) [C:\Users\khush\O
+neDrive\Desktop\mnsban
+k\mnsfrontend\mnsbankb
+hopal\.next\build\chun
+ks\[root-of-the-server
+]__974941ed._.js:443:3
+1])
