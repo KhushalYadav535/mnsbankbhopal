@@ -38,73 +38,72 @@ export function Header() {
       >
         <FraudBanner />
         <header
-          className={`transition-all duration-500 border-b ${
-            isScrolled
+          className={`transition-all duration-500 border-b ${isScrolled
               ? "bg-background/80 backdrop-blur-2xl border-white/10 dark:border-white/5 py-4 shadow-sm"
               : "bg-transparent border-transparent py-6"
-          }`}
+            }`}
         >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group relative z-50">
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-primary-foreground overflow-hidden shadow-[0_0_30px_rgba(20,30,80,0.3)] dark:shadow-[0_0_30px_rgba(200,160,50,0.15)] transition-transform duration-500 group-hover:scale-105">
-              <Landmark className="w-6 h-6 z-10" strokeWidth={1.5} />
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-xl leading-none tracking-tight text-foreground">
-                MNS Bank
-              </span>
-              <span className="text-[0.65rem] font-medium tracking-widest uppercase text-muted-foreground mt-1">
-                Since 1996
-              </span>
-            </div>
-          </Link>
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="relative text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group py-2"
-              >
-                {link.label}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out rounded-full" />
-              </Link>
-            ))}
-          </nav>
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-3 group relative z-50">
+              <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-primary-foreground overflow-hidden shadow-[0_0_30px_rgba(20,30,80,0.3)] dark:shadow-[0_0_30px_rgba(200,160,50,0.15)] transition-transform duration-500 group-hover:scale-105">
+                <Landmark className="w-6 h-6 z-10" strokeWidth={1.5} />
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-xl leading-none tracking-tight text-foreground">
+                  MNS Bank
+                </span>
+                <span className="text-[0.65rem] font-medium tracking-widest uppercase text-muted-foreground mt-1">
+                  Since 1996
+                </span>
+              </div>
+            </Link>
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-4">
-            <MagneticButton>
-              <Button
-                variant="outline"
-                className="rounded-full px-6 font-semibold border-border bg-background/50 backdrop-blur-md hover:bg-background hover:border-accent transition-all duration-300"
-                asChild
-              >
-                <a href="https://www.mnsbankonline.com:8444/#/termCondition" target="_blank" rel="noopener noreferrer">
-                  Net Banking
-                </a>
-              </Button>
-            </MagneticButton>
-            <MagneticButton>
-              <Button className="rounded-full px-6 font-semibold shadow-[0_0_20px_rgba(200,160,50,0.2)] hover:shadow-[0_0_30px_rgba(200,160,50,0.4)] hover:scale-105 transition-all duration-300 bg-primary text-primary-foreground" asChild>
-                <Link href="/open-account">Open Account</Link>
-              </Button>
-            </MagneticButton>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="relative text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group py-2"
+                >
+                  {link.label}
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out rounded-full" />
+                </Link>
+              ))}
+            </nav>
+
+            {/* Desktop Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              <MagneticButton>
+                <Button
+                  variant="outline"
+                  className="rounded-full px-6 font-semibold border-border bg-background/50 backdrop-blur-md hover:bg-background hover:border-accent transition-all duration-300"
+                  asChild
+                >
+                  <a href="https://www.mnsbankonline.com:8444/#/termCondition" target="_blank" rel="noopener noreferrer">
+                    Net Banking
+                  </a>
+                </Button>
+              </MagneticButton>
+              <MagneticButton>
+                <Button className="rounded-full px-6 font-semibold shadow-[0_0_20px_rgba(200,160,50,0.2)] hover:shadow-[0_0_30px_rgba(200,160,50,0.4)] hover:scale-105 transition-all duration-300 bg-primary text-primary-foreground" asChild>
+                  <Link href="/open-account">Open Account</Link>
+                </Button>
+              </MagneticButton>
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="lg:hidden relative z-50 p-2 text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden relative z-50 p-2 text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
         </header>
       </motion.div>
 
@@ -135,8 +134,8 @@ export function Header() {
                   </Link>
                 </motion.div>
               ))}
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.4 }}

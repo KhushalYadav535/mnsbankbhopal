@@ -25,7 +25,7 @@ export function HeroSection() {
 
   const containerVars = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
@@ -36,8 +36,8 @@ export function HeroSection() {
 
   const itemVars = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
     }
@@ -45,10 +45,10 @@ export function HeroSection() {
 
   return (
     <div className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-background">
-      
+
       {/* Animated Gradient Mesh Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div 
+        <div
           className="absolute inset-0 opacity-30 animate-gradient-mesh"
           style={{
             background: "radial-gradient(ellipse at 20% 50%, oklch(0.70 0.18 55 / 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, oklch(0.15 0.06 250 / 0.12) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, oklch(0.5 0.1 240 / 0.06) 0%, transparent 50%)"
@@ -59,34 +59,34 @@ export function HeroSection() {
       {/* Background Animated Blobs with Parallax */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Top Right Gold Blob */}
-        <motion.div 
+        <motion.div
           style={{ y: blobY1 }}
-          className="absolute -top-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob" 
+          className="absolute -top-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob"
         />
         {/* Bottom Left Blue Blob */}
-        <motion.div 
+        <motion.div
           style={{ y: blobY2 }}
-          className="absolute top-[40%] -left-[20%] w-[60vw] h-[60vw] rounded-full bg-primary/20 blur-[140px] mix-blend-screen animate-blob animation-delay-2000" 
+          className="absolute top-[40%] -left-[20%] w-[60vw] h-[60vw] rounded-full bg-primary/20 blur-[140px] mix-blend-screen animate-blob animation-delay-2000"
         />
         {/* Center Subdued Glow */}
-        <motion.div 
+        <motion.div
           style={{ y: blobY3 }}
-          className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-blue-400/10 blur-[100px] mix-blend-screen animate-blob animation-delay-4000" 
+          className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-blue-400/10 blur-[100px] mix-blend-screen animate-blob animation-delay-4000"
         />
-        
+
         {/* CSS Grid Overlay with parallax + pulse */}
-        <motion.div 
-          style={{ 
+        <motion.div
+          style={{
             y: gridY,
             backgroundImage: `linear-gradient(to right, var(--color-foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--color-foreground) 1px, transparent 1px)`,
             backgroundSize: '4rem 4rem',
             opacity: 0.03,
           }}
-          className="absolute inset-0 animate-grid-pulse" 
+          className="absolute inset-0 animate-grid-pulse"
         />
 
         {/* Animated dot grid overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
           style={{
             backgroundImage: `radial-gradient(circle, var(--color-foreground) 1px, transparent 1px)`,
@@ -96,7 +96,7 @@ export function HeroSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full pt-32 pb-24">
-        <motion.div 
+        <motion.div
           variants={containerVars}
           initial="hidden"
           animate="visible"
@@ -108,7 +108,7 @@ export function HeroSection() {
             </span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             variants={itemVars}
             className="text-6xl md:text-8xl lg:text-[96px] font-display font-medium text-foreground leading-[1.05] tracking-tight mb-8"
           >
@@ -119,15 +119,15 @@ export function HeroSection() {
             </span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             variants={itemVars}
             className="text-xl md:text-2xl text-foreground/70 max-w-2xl leading-relaxed mb-12 font-light"
           >
-            Bhopal's most trusted cooperative bank since decades. 
+            Bhopal's most trusted cooperative bank since decades.
             Experience uncompromising security paired with ultra-premium digital banking.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             variants={itemVars}
             className="flex flex-col sm:flex-row gap-4"
           >
@@ -184,13 +184,13 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Marquee Ticker at the bottom — in normal flow so it doesn't get hidden */}
-      <div className="relative z-20 mt-auto w-full bg-card/40 backdrop-blur-xl border-t border-white/10 dark:border-white/5 py-4 overflow-hidden">
+      {/* Marquee Ticker at the absolute bottom */}
+      <div className="absolute bottom-0 inset-x-0 w-full bg-card/40 backdrop-blur-xl border-t border-white/10 dark:border-white/5 py-4 overflow-hidden z-20">
         <div className="flex whitespace-nowrap animate-marquee">
-          {/* Triple the array for seamless infinite scrolling */}
+          {/* Double the array for seamless infinite scrolling */}
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((text, i) => (
             <span key={i} className="mx-8 text-sm font-semibold tracking-wider uppercase text-foreground/80 flex items-center gap-8">
-              {text} 
+              {text}
               <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block" />
             </span>
           ))}
