@@ -12,37 +12,37 @@ export default function ProductsPage() {
     {
       title: 'Savings Account',
       description: 'Premium savings with competitive interest rates and zero balance requirements.',
-      href: '/products/savings',
+      href: '/products/savings-account',
       benefits: ['4.5% Interest', 'Zero Minimum Balance', 'Free Debit Card'],
     },
     {
       title: 'Fixed Deposits',
       description: 'Secure your future with our high-yield fixed deposit schemes.',
-      href: '/products/fixed-deposits',
+      href: '/products/savings-account',
       benefits: ['6.5% - 7% Interest', 'Flexible Tenure', 'Safe & Secure'],
     },
     {
       title: 'Home Loans',
       description: 'Affordable home loans with flexible EMI and quick approval.',
-      href: '/products/home-loans',
+      href: '/products/loans/personal',
       benefits: ['8.2% Starting Rate', 'Quick Approval', 'Flexible Tenure'],
     },
     {
       title: 'Personal Loans',
       description: 'Quick personal loans for your financial needs.',
-      href: '/products/personal-loans',
+      href: '/products/loans/personal',
       benefits: ['10.5% Starting Rate', '48-Hour Approval', 'Upto ₹25 Lakhs'],
     },
     {
       title: 'Business Loans',
       description: 'Customized loan solutions to grow your business.',
-      href: '/products/business-loans',
+      href: '/products/loans/business',
       benefits: ['9% Starting Rate', 'Dedicated Manager', 'Upto ₹50 Lakhs'],
     },
     {
       title: 'Investment Plans',
       description: 'Build wealth with our investment and insurance products.',
-      href: '/products/investments',
+      href: '/products/savings-account',
       benefits: ['6-8% Returns', 'Tax Benefits', 'Guaranteed Maturity'],
     },
   ];

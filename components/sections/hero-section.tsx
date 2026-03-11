@@ -1,117 +1,201 @@
-import React from 'react';
-import Link from 'next/link';
-import { ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
-import { Button } from '../ui/button';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "../ui/button";
+import { MagneticButton } from "../magnetic-button";
+import { ShieldCheck, Zap, BadgeCheck } from "lucide-react";
+
+const MARQUEE_ITEMS = [
+  "🏦 New Deposit Rates Available",
+  "Now Hiring — Check Careers",
+  "Special FD Rate: 360 Days @ 6.00%",
+  "DICGC Insured Deposits",
+  "Zero Balance Payroll Accounts",
+  "Lowest Gold Loan Interest Rates"
+];
 
 export function HeroSection() {
+  const { scrollY } = useScroll();
+  const blobY1 = useTransform(scrollY, [0, 600], [0, -120]);
+  const blobY2 = useTransform(scrollY, [0, 600], [0, -80]);
+  const blobY3 = useTransform(scrollY, [0, 600], [0, -50]);
+  const gridY = useTransform(scrollY, [0, 600], [0, -40]);
+
+  const containerVars = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVars = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }
+    }
+  };
+
   return (
-    <section className="relative min-h-[700px] flex items-center overflow-hidden">
-      {/* Premium Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-accent/8 pointer-events-none" />
+    <div className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-background">
       
-      {/* Animated Decorative Elements */}
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-accent/15 to-transparent rounded-full blur-3xl animate-pulse" />
-      <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-2xl" />
+      {/* Animated Gradient Mesh Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div 
+          className="absolute inset-0 opacity-30 animate-gradient-mesh"
+          style={{
+            background: "radial-gradient(ellipse at 20% 50%, oklch(0.70 0.18 55 / 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, oklch(0.15 0.06 250 / 0.12) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, oklch(0.5 0.1 240 / 0.06) 0%, transparent 50%)"
+          }}
+        />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-secondary/15 to-accent/10 rounded-full border border-secondary/40 hover:border-secondary/60 transition-colors">
-                <span className="inline-block w-2 h-2 bg-secondary rounded-full"></span>
-                <span className="text-sm font-semibold text-secondary">
-                  Premium Banking Since 1996
-                </span>
-              </div>
-              
-              <h1 className="text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight text-foreground">
-                Your Trusted<br /><span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">Banking Partner</span>
-              </h1>
-              
-              <p className="text-xl text-foreground/70 leading-relaxed max-w-xl font-light">
-                Experience premium banking with MNS Bank. Secure, reliable, and innovative financial solutions for individuals and businesses.
-              </p>
-            </div>
+      {/* Background Animated Blobs with Parallax */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Top Right Gold Blob */}
+        <motion.div 
+          style={{ y: blobY1 }}
+          className="absolute -top-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-blob" 
+        />
+        {/* Bottom Left Blue Blob */}
+        <motion.div 
+          style={{ y: blobY2 }}
+          className="absolute top-[40%] -left-[20%] w-[60vw] h-[60vw] rounded-full bg-primary/20 blur-[140px] mix-blend-screen animate-blob animation-delay-2000" 
+        />
+        {/* Center Subdued Glow */}
+        <motion.div 
+          style={{ y: blobY3 }}
+          className="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-blue-400/10 blur-[100px] mix-blend-screen animate-blob animation-delay-4000" 
+        />
+        
+        {/* CSS Grid Overlay with parallax + pulse */}
+        <motion.div 
+          style={{ 
+            y: gridY,
+            backgroundImage: `linear-gradient(to right, var(--color-foreground) 1px, transparent 1px), linear-gradient(to bottom, var(--color-foreground) 1px, transparent 1px)`,
+            backgroundSize: '4rem 4rem',
+            opacity: 0.03,
+          }}
+          className="absolute inset-0 animate-grid-pulse" 
+        />
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground rounded-lg font-semibold group shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all"
-                asChild
-              >
-                <Link href="/open-account" className="flex items-center gap-2">
-                  Open Your Account
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+        {/* Animated dot grid overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
+          style={{
+            backgroundImage: `radial-gradient(circle, var(--color-foreground) 1px, transparent 1px)`,
+            backgroundSize: '24px 24px',
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full pt-32 pb-24">
+        <motion.div 
+          variants={containerVars}
+          initial="hidden"
+          animate="visible"
+          className="max-w-4xl"
+        >
+          <motion.div variants={itemVars} className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-muted border border-border text-sm font-medium tracking-wide text-muted-foreground backdrop-blur-md">
+              Mahanagar Nagrik Sahakari Bank
+            </span>
+          </motion.div>
+
+          <motion.h1 
+            variants={itemVars}
+            className="text-6xl md:text-8xl lg:text-[96px] font-display font-medium text-foreground leading-[1.05] tracking-tight mb-8"
+          >
+            Welcome to the <br className="hidden md:block" />
+            <span className="relative">
+              World of Privileges.
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0" />
+            </span>
+          </motion.h1>
+
+          <motion.p 
+            variants={itemVars}
+            className="text-xl md:text-2xl text-foreground/70 max-w-2xl leading-relaxed mb-12 font-light"
+          >
+            Bhopal's most trusted cooperative bank since decades. 
+            Experience uncompromising security paired with ultra-premium digital banking.
+          </motion.p>
+
+          <motion.div 
+            variants={itemVars}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <MagneticButton>
+              <Button size="lg" className="h-14 px-8 text-lg rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_40px_rgba(20,30,80,0.5)] transition-all hover:scale-[1.03] duration-300" asChild>
+                <Link href="/open-account">Open Account</Link>
               </Button>
-              
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-lg font-semibold border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all"
-                asChild
-              >
-                <Link href="/products">Explore Products</Link>
+            </MagneticButton>
+            <MagneticButton>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-xl bg-card/10 backdrop-blur-md border border-white/20 dark:border-white/10 hover:bg-card hover:border-accent transition-all hover:scale-[1.03] duration-300">
+                Explore Services
               </Button>
-            </div>
+            </MagneticButton>
+          </motion.div>
+        </motion.div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-border/40">
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">28K+</div>
-                <p className="text-sm font-medium text-foreground/70">Satisfied Customers</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">₹500Cr+</div>
-                <p className="text-sm font-medium text-foreground/70">Assets Under Management</p>
-              </div>
-              <div className="space-y-2">
-                <div className="text-4xl font-bold bg-gradient-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">28 Yrs</div>
-                <p className="text-sm font-medium text-foreground/70">Banking Excellence</p>
-              </div>
+        {/* Floating Glassmorphism Badges */}
+        <div className="hidden lg:block">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.6 }}
+            className="absolute top-[20%] right-[8%] animate-badge-drift-1"
+          >
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-card/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg">
+              <ShieldCheck className="w-5 h-5 text-green-500" />
+              <span className="text-sm font-bold text-foreground">Secure</span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:mt-0">
-            {/* Security */}
-            <div className="group p-7 rounded-2xl bg-gradient-to-br from-card to-card/50 hover:from-card/80 hover:to-card/40 border border-border/30 hover:border-secondary/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:from-secondary/25 group-hover:to-secondary/10 transition-all">
-                <Shield className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2 text-lg">Advanced Security</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
-                RBI-compliant security with industry-leading encryption
-              </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="absolute top-[40%] right-[3%] animate-badge-drift-2"
+          >
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-card/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg">
+              <Zap className="w-5 h-5 text-amber-500" />
+              <span className="text-sm font-bold text-foreground">Fast</span>
             </div>
+          </motion.div>
 
-            {/* Growth */}
-            <div className="group p-7 rounded-2xl bg-gradient-to-br from-card to-card/50 hover:from-card/80 hover:to-card/40 border border-border/30 hover:border-accent/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-5 group-hover:from-accent/25 group-hover:to-accent/10 transition-all">
-                <TrendingUp className="w-7 h-7 text-accent group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2 text-lg">Investment Growth</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
-                Competitive interest rates to grow your wealth
-              </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.4, duration: 0.6 }}
+            className="absolute top-[60%] right-[10%] animate-badge-drift-3"
+          >
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-card/30 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-lg">
+              <BadgeCheck className="w-5 h-5 text-blue-500" />
+              <span className="text-sm font-bold text-foreground">Trusted</span>
             </div>
-
-            {/* Community */}
-            <div className="group p-7 rounded-2xl bg-gradient-to-br from-card to-card/50 hover:from-card/80 hover:to-card/40 border border-border/30 hover:border-primary/50 transition-all duration-300 cursor-pointer sm:col-span-2 lg:col-span-1 shadow-sm hover:shadow-lg">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:from-primary/25 group-hover:to-primary/10 transition-all">
-                <Users className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2 text-lg">Community-Focused</h3>
-              <p className="text-sm text-foreground/70 leading-relaxed">
-                Supporting local Bhopal community since 1996
-              </p>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+
+      {/* Marquee Ticker at the bottom — in normal flow so it doesn't get hidden */}
+      <div className="relative z-20 mt-auto w-full bg-card/40 backdrop-blur-xl border-t border-white/10 dark:border-white/5 py-4 overflow-hidden">
+        <div className="flex whitespace-nowrap animate-marquee">
+          {/* Triple the array for seamless infinite scrolling */}
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((text, i) => (
+            <span key={i} className="mx-8 text-sm font-semibold tracking-wider uppercase text-foreground/80 flex items-center gap-8">
+              {text} 
+              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block" />
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

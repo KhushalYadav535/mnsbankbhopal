@@ -48,7 +48,7 @@ export function WhyChooseUsSection() {
             return (
               <div
                 key={reason.title}
-                className="group relative p-9 rounded-2xl border border-border/40 hover:border-secondary/50 bg-gradient-to-br from-card to-card/50 hover:from-card/80 hover:to-card/40 transition-all duration-300 shadow-sm hover:shadow-xl"
+                className="group relative p-9 rounded-2xl border border-white/10 dark:border-white/5 hover:border-secondary/50 bg-card/40 backdrop-blur-md hover:bg-card/60 transition-all duration-500 shadow-lg hover:shadow-2xl hover:-translate-y-1"
               >
                 {/* Background accent */}
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />

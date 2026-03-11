@@ -62,10 +62,10 @@ export function RatesSection() {
           {rates.map((rateItem, index) => (
             <Card
               key={index}
-              className={`p-8 transition-all duration-300 border rounded-2xl flex flex-col ${
+              className={`p-8 transition-all duration-500 border rounded-2xl flex flex-col backdrop-blur-md ${
                 rateItem.highlight
-                  ? 'bg-gradient-to-br from-secondary/15 to-accent/10 border-secondary/60 shadow-xl hover:shadow-2xl scale-105 lg:scale-110'
-                  : 'bg-gradient-to-br from-card to-card/50 border-border/40 hover:border-secondary/50 hover:shadow-xl'
+                  ? 'bg-gradient-to-br from-secondary/15 to-accent/10 border-secondary/60 shadow-xl hover:shadow-2xl scale-105 lg:scale-110 hover:-translate-y-2'
+                  : 'bg-card/40 border-white/10 dark:border-white/5 hover:border-secondary/50 hover:shadow-xl hover:-translate-y-1'
               }`}
             >
               {rateItem.highlight && (

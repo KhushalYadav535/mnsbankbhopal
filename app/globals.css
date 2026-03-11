@@ -5,105 +5,75 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Premium Banking Theme - Navy & Gold */
-  --background: oklch(0.98 0.001 240);
-  --foreground: oklch(0.16 0.01 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.01 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.01 240);
+  /* Ultra Premium Palette - Zerodha clarity + HDFC prestige + Apple polish */
   
-  /* Primary: Deep Navy Blue - Trust & Authority */
-  --primary: oklch(0.25 0.08 240);
-  --primary-foreground: oklch(0.98 0.001 240);
+  /* Light Mode - Pure, clear aesthetics */
+  --background: oklch(0.995 0.005 240); /* Extreme light frosted white */
+  --foreground: oklch(0.12 0.02 240);   /* Deep sharp text */
   
-  /* Secondary: Warm Gold Accent - Premium Feel */
-  --secondary: oklch(0.70 0.15 70);
-  --secondary-foreground: oklch(0.16 0.01 240);
+  --card: oklch(1 0 0 / 0.7);           /* Semi-transparent for glassmorphism */
+  --card-foreground: oklch(0.12 0.02 240);
   
-  /* Muted: Soft Gray for Secondary Content */
-  --muted: oklch(0.92 0.002 240);
-  --muted-foreground: oklch(0.45 0.02 240);
+  --popover: oklch(1 0 0 / 0.8);
+  --popover-foreground: oklch(0.12 0.02 240);
   
-  /* Accent: Bright Gold for CTAs */
-  --accent: oklch(0.73 0.18 65);
-  --accent-foreground: oklch(0.16 0.01 240);
+  /* Primary: Midnight Navy - Ultimate trust and authority */
+  --primary: oklch(0.15 0.06 250);
+  --primary-foreground: oklch(0.99 0 0);
   
-  /* Destructive: Alert Red */
-  --destructive: oklch(0.60 0.20 30);
+  /* Secondary: Subtle metallic tone */
+  --secondary: oklch(0.95 0.01 240);
+  --secondary-foreground: oklch(0.15 0.06 250);
+  
+  /* Muted: Soft background partitions */
+  --muted: oklch(0.96 0.01 240);
+  --muted-foreground: oklch(0.40 0.03 240);
+  
+  /* Accent: Striking prestige Gold/Bronze */
+  --accent: oklch(0.70 0.18 55); 
+  --accent-foreground: oklch(1 0 0);
+  
+  /* Destructive */
+  --destructive: oklch(0.55 0.20 25);
   --destructive-foreground: oklch(1 0 0);
   
-  --border: oklch(0.92 0.002 240);
-  --input: oklch(0.96 0.002 240);
-  --ring: oklch(0.25 0.08 240);
+  --border: oklch(0.20 0.05 250 / 0.1);
+  --input: oklch(0.20 0.05 250 / 0.15);
+  --ring: oklch(0.70 0.18 55 / 0.5); /* Gold ring */
   
-  /* Chart colors for financial data */
-  --chart-1: oklch(0.25 0.08 240);
-  --chart-2: oklch(0.70 0.15 70);
-  --chart-3: oklch(0.60 0.12 200);
-  --chart-4: oklch(0.55 0.08 130);
-  --chart-5: oklch(0.50 0.10 40);
-  
-  --radius: 0.75rem;
-  
-  /* Sidebar for future admin panels */
-  --sidebar: oklch(0.25 0.08 240);
-  --sidebar-foreground: oklch(0.98 0.001 240);
-  --sidebar-primary: oklch(0.70 0.15 70);
-  --sidebar-primary-foreground: oklch(0.16 0.01 240);
-  --sidebar-accent: oklch(0.73 0.18 65);
-  --sidebar-accent-foreground: oklch(0.16 0.01 240);
-  --sidebar-border: oklch(0.40 0.06 240);
-  --sidebar-ring: oklch(0.70 0.15 70);
+  --radius: 1.25rem; /* Apple-style rounded corners */
 }
 
 .dark {
-  /* Premium Banking Dark Mode - Navy Background with Gold Accents */
-  --background: oklch(0.14 0.01 240);
-  --foreground: oklch(0.96 0.002 240);
-  --card: oklch(0.22 0.02 240);
-  --card-foreground: oklch(0.96 0.002 240);
-  --popover: oklch(0.22 0.02 240);
-  --popover-foreground: oklch(0.96 0.002 240);
+  /* Dark Mode - Obsidian depth, luxurious glows */
+  --background: oklch(0.08 0.01 250); /* Deep obsidian blue/black */
+  --foreground: oklch(0.98 0 0);
   
-  --primary: oklch(0.73 0.18 65);
-  --primary-foreground: oklch(0.16 0.01 240);
+  --card: oklch(0.12 0.02 250 / 0.6);
+  --card-foreground: oklch(0.98 0 0);
   
-  --secondary: oklch(0.35 0.05 240);
-  --secondary-foreground: oklch(0.96 0.002 240);
+  --popover: oklch(0.12 0.02 250 / 0.8);
+  --popover-foreground: oklch(0.98 0 0);
   
-  --muted: oklch(0.35 0.05 240);
+  --primary: oklch(0.85 0.05 250); /* Soft icy blue for contrast on dark */
+  --primary-foreground: oklch(0.10 0.02 250);
+  
+  --secondary: oklch(0.15 0.03 250);
+  --secondary-foreground: oklch(0.98 0 0);
+  
+  --muted: oklch(0.15 0.03 250);
   --muted-foreground: oklch(0.65 0.02 240);
   
-  --accent: oklch(0.73 0.18 65);
-  --accent-foreground: oklch(0.16 0.01 240);
+  /* Accent stays premium gold, slightly brighter */
+  --accent: oklch(0.75 0.20 55);
+  --accent-foreground: oklch(0.08 0.01 250);
   
-  --destructive: oklch(0.65 0.18 30);
-  --destructive-foreground: oklch(0.96 0.002 240);
-  
-  --border: oklch(0.35 0.05 240);
-  --input: oklch(0.30 0.04 240);
-  --ring: oklch(0.73 0.18 65);
-  
-  --chart-1: oklch(0.73 0.18 65);
-  --chart-2: oklch(0.60 0.12 200);
-  --chart-3: oklch(0.70 0.15 70);
-  --chart-4: oklch(0.55 0.08 130);
-  --chart-5: oklch(0.65 0.18 30);
-  
-  --sidebar: oklch(0.16 0.01 240);
-  --sidebar-foreground: oklch(0.96 0.002 240);
-  --sidebar-primary: oklch(0.73 0.18 65);
-  --sidebar-primary-foreground: oklch(0.16 0.01 240);
-  --sidebar-accent: oklch(0.73 0.18 65);
-  --sidebar-accent-foreground: oklch(0.16 0.01 240);
-  --sidebar-border: oklch(0.35 0.05 240);
-  --sidebar-ring: oklch(0.73 0.18 65);
+  --border: oklch(1 0 0 / 0.1);
+  --input: oklch(1 0 0 / 0.15);
+  --ring: oklch(0.75 0.20 55 / 0.5);
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -123,23 +93,22 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+
+  /* Fonts mapped directly to tailwind utility classes */
+  --font-sans: var(--font-sans), 'system-ui', 'sans-serif';
+  --font-serif: var(--font-serif), 'Georgia', 'serif';
+  --font-display: var(--font-serif), 'Georgia', 'serif'; 
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.04)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+  }
 }
 
 @layer base {
@@ -147,6 +116,174 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    /* Apple-like smooth scroll */
+    scroll-behavior: smooth;
   }
+  
+  /* Apply display font to all headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+/* Custom Animations */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 15s infinite alternate ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+/* ============================================
+   PREMIUM ANIMATIONS
+   ============================================ */
+
+/* Gentle floating / breathing for phone mockup */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse ripple for security / shield icons */
+@keyframes pulse-ripple {
+  0% { box-shadow: 0 0 0 0 oklch(0.70 0.18 55 / 0.4); }
+  70% { box-shadow: 0 0 0 16px oklch(0.70 0.18 55 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.70 0.18 55 / 0); }
+}
+
+.animate-pulse-ripple {
+  animation: pulse-ripple 2s ease-out infinite;
+}
+
+/* Slow-moving gradient mesh for hero background depth */
+@keyframes gradient-mesh {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-mesh {
+  background-size: 400% 400%;
+  animation: gradient-mesh 15s ease infinite;
+}
+
+/* Floating badge drift */
+@keyframes badge-drift-1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(8px, -12px) rotate(1deg); }
+  50% { transform: translate(-4px, -8px) rotate(-0.5deg); }
+  75% { transform: translate(6px, 4px) rotate(0.5deg); }
+}
+
+@keyframes badge-drift-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-10px, -6px) rotate(-1deg); }
+  50% { transform: translate(6px, -14px) rotate(0.5deg); }
+  75% { transform: translate(-4px, 8px) rotate(-0.5deg); }
+}
+
+@keyframes badge-drift-3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(12px, 6px) rotate(0.5deg); }
+  50% { transform: translate(-8px, -10px) rotate(-1deg); }
+  75% { transform: translate(4px, -6px) rotate(0.5deg); }
+}
+
+.animate-badge-drift-1 { animation: badge-drift-1 6s ease-in-out infinite; }
+.animate-badge-drift-2 { animation: badge-drift-2 7s ease-in-out infinite; }
+.animate-badge-drift-3 { animation: badge-drift-3 8s ease-in-out infinite; }
+
+/* Partner marquee — reversed direction */
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: oklch(0.70 0.18 55);
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+
+.cursor-glow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: oklch(0.70 0.18 55 / 0.15);
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  mix-blend-mode: difference;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease, transform 0.15s ease;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .cursor-glow {
+    display: none !important;
+  }
+}
+
+/* Animated thin grid lines for fintech feel */
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+.animate-grid-pulse {
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+/* Preloader fade */
+@keyframes preloader-bar {
+  0% { width: 0%; }
+  100% { width: 100%; }
 }

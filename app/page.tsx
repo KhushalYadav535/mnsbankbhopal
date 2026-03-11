@@ -1,24 +1,29 @@
-import React from 'react';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { HeroSection } from '@/components/sections/hero-section';
-import { TrustSection } from '@/components/sections/trust-section';
-import { ProductsSection } from '@/components/sections/products-section';
-import { WhyChooseUsSection } from '@/components/sections/why-choose-us-section';
-import { RatesSection } from '@/components/sections/rates-section';
-import { InquiryCTASection } from '@/components/sections/inquiry-cta-section';
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { HeroSection } from "@/components/sections/hero-section";
+import { QuickAssistanceStrip } from "@/components/sections/quick-assistance";
+import { FeaturedProducts } from "@/components/sections/featured-products";
+import { StatsBar } from "@/components/sections/stats-bar";
+import { LoanProducts } from "@/components/sections/loan-products";
+import { DepositRates } from "@/components/sections/deposit-rates";
+import { MobileAppSection } from "@/components/sections/mobile-app";
+import { LatestUpdates } from "@/components/sections/latest-updates";
+import { TrustBar } from "@/components/sections/trust-bar";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex min-h-screen flex-col">
         <HeroSection />
-        <TrustSection />
-        <ProductsSection />
-        <WhyChooseUsSection />
-        <RatesSection />
-        <InquiryCTASection />
+        <QuickAssistanceStrip />
+        <FeaturedProducts />
+        <StatsBar />
+        <LoanProducts />
+        <DepositRates />
+        <MobileAppSection />
+        <LatestUpdates />
+        <TrustBar />
       </main>
       <Footer />
     </>

@@ -63,7 +63,7 @@ export function ProductsSection() {
             const Icon = product.icon;
             return (
               <Link key={product.id} href={product.href}>
-                <Card className="h-full p-8 group hover:shadow-2xl transition-all duration-300 cursor-pointer hover:border-secondary/40 flex flex-col bg-gradient-to-br from-card to-card/40 border border-border/40 hover:from-card/90 hover:to-card/50">
+                <Card className="h-full p-8 group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer border border-white/10 dark:border-white/5 flex flex-col bg-card/40 backdrop-blur-md hover:bg-card/60">
                   {/* Icon */}
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.color} flex items-center justify-center mb-6 group-hover:scale-125 transition-transform shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
